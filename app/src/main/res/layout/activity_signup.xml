@@ -27,10 +27,10 @@
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/mail"
         android:autofillHints="no"
         android:ems="10"
         android:inputType="textEmailAddress"
+        android:hint="@string/mail"
         android:text="@string/email"/>
 
 
