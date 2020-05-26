@@ -2,8 +2,6 @@ package com.example.loginfirebase;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     private EditText emailTV, passwordTV;
-    private Button loginBtn;
+    private Button loginBtn, registerBtn;
     private ProgressBar progressBar;
 
     //Inititializing firebase Auth
@@ -44,7 +42,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+    registerBtn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick (View v){
+        Intent intent = new Intent(MainActivity.this, signup.class);
+        startActivity(intent);
     }
+    });
+}
+
+
+
+
+
 
     private void loginUserAccount() {
 
@@ -81,12 +92,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-
-    @SuppressLint("WrongViewCast")
     private void initializeUI() {
         emailTV = findViewById(R.id.email);
-        passwordTV = findViewById(R.id.password);
-
+        passwordTV = findViewById(R.id.Password);
+        registerBtn = findViewById(R.id.linkRegister);
         loginBtn = findViewById(R.id.login);
         progressBar = findViewById(R.id.progressBar);
     }

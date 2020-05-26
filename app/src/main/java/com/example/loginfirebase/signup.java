@@ -21,7 +21,7 @@ public class signup extends AppCompatActivity {
 
     //Define variables
     private EditText emailTV, passwordTV;
-    private Button regBtn;
+    private Button regBtn, loginBtn;
     private ProgressBar progressBar;
 
     //Adding Firebase Authentication
@@ -43,6 +43,14 @@ public class signup extends AppCompatActivity {
 
                 registerNewUser();
 
+            }
+        });
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(signup.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -85,7 +93,8 @@ public class signup extends AppCompatActivity {
     private void initializeUI() {
         emailTV = findViewById(R.id.email);
         passwordTV = findViewById(R.id.Password);
-        regBtn= findViewById(R.id.register);
+        regBtn= findViewById(R.id.linkRegister);
+        loginBtn= findViewById(R.id.linkLogin);
         progressBar = findViewById(R.id.progressBar);
     }
 }
